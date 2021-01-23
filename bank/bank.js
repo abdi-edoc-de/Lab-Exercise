@@ -120,7 +120,7 @@ function transfer(){
 
 
 function menuu(){
-    menu = prompt("1 for  crating acount\n2 for deposit\n3 for withdraw\n4 check Balance\n5 for transfer");
+    let menu = prompt("1 for  crating acount\n2 for deposit\n3 for withdraw\n4 check Balance\n5 for transfer");
     switch(menu){
         case "1":
             creatAcount()
