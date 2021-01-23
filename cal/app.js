@@ -138,15 +138,105 @@ function inputChecker(a){
 
     }
 }
+
+    function add(num,num2) {return num+num2 }
+    function multi(num,num2) {return num*num2 }
+    function sub(num,num2) {return num-num2 }
+    function div(num,num2) {
+        if (num2===0){
+            alert("0 division problem try again")
+            menuu()
+        } else{
+            return num/num2
+        }
+     }
+function maxx() {
+    let num=prompt("Enter the numbers one by one to fin the max")
+    let arr=[]
+    while(num){
+        inputChecker(num)
+        arr.push(Number(num))
+        num=prompt("Enter the number\nto quit enter q")
+        if (num==="q"){
+            num=false
+        }
+
+        
+    }
+    let result= Math.max(...arr) 
+    alert(`the result is ${result}`)
+}
+function minn() {
+    let num=prompt("Enter the numbers one by one to fin the max")
+    let arr=[]
+    while(num){
+        inputChecker(num)
+        arr.push(Number(num))
+        num=prompt("Enter the number\nto quit enter q")
+        if (num==="q"){
+            num=false
+        }
+        
+
+        
+    }
+    let result= Math.min(...arr) 
+    alert(`the result is ${result}`)
+}
+
+function average() {
+    let num=prompt("Enter the numbers one by one to fin the max")
+    let total=0;
+    let len=0
+    while(num){
+        inputChecker(num)
+        total+=Number(num)
+        len+=1
+        num=prompt("Enter the number\nto quit enter q")
+        if (num==="q"){
+            num=false
+        }
+
+        
+    }
+    let result= total/len
+    alert(`the result is ${result}`)
+}
+
+
 function arthemetic(){
-     do {let num1=Number(prompt("Enter the number "))
+    let num1=Number(prompt("Enter the number "))
+    inputChecker(num1)
     let q=true;
     let op,num2;
-      }
+
     while (q){
-        op =""+ prompt("For addition enter 1\nFor Subtraction enter 2  \n for multiplication enter 3\nFor division enter 4 ");
-        num2=Number(prompt("Enter the number")
-        
+        op =prompt("For addition enter 1\nFor Subtraction enter 2\n for multiplication enter 3\nFor division enter 4\nif you finish enter q ");
+        if (op!=="q"){
+        num2=Number(prompt("Enter the number"))}
+        inputChecker(num2)
+        switch(op){
+            case "1":
+                num1=add(num1,num2)
+                break;
+            case "2":
+                num1=sub(num1,num2)
+                break;
+            case "3":
+                num1=multi(num1,num2)
+                break;
+            case "4":
+                num1=div(num1,num2)
+                break;
+            case "q":
+                alert(`the result is ${num1}`)
+                menuu()
+                break;
+            default:
+                alert("wrong entry pleas try again")
+                menuu()           
+
+        }
         
     }
 
@@ -174,6 +264,8 @@ function menuu(){
 }
 
 (function(){
-    menuu()
+        while(true){
+            menuu()
+        }
 
 })();
